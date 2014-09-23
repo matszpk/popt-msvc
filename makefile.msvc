@@ -1,0 +1,21 @@
+CC = cl
+CFLAGS = /Os /TC
+LDFLAGS =
+LIB = lib
+
+all: popt.lib
+
+popt.lib: popt.obj poptconfig.obj popthelp.obj poptint.obj poptparse.obj
+	$(LIB) /out:$@ $**
+
+.c.obj:
+	$(CC) $(CFLAGS) /DHAVE_CONFIG_H=1 /c $<
+
+popt.obj: popt.c popt.h poptint.h system.h config.h
+poptconfig.obj: poptconfig.c poptint.h system.h config.h
+popthelp.obj: popthelp.c poptint.h system.h config.h
+poptint.obj: poptint.c poptint.h system.h config.h
+poptparse.obj: poptparse.c poptint.h system.h config.h
+
+clean:
+	del *.obj popt.lib
