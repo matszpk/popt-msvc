@@ -14,3 +14,18 @@ Application Development" by Michael K. Johnson and Erik Troan (available
 from Addison Wesley in May, 1998).
 
 Comments on popt should be addressed to popt-devel@rpm5.org.
+
+------------------------------------------------------------------------------
+Info for Microsoft Visual Studio port:
+
+1. Building
+
+nmake /fmakefile.msvc
+
+2. Cleaning up
+
+nmame /fmakefile.msvc clean
+
+3. Tests
+
+Tested with Microsft Visual Studio Express 2012
