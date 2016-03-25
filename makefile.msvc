@@ -6,7 +6,7 @@ LIB = lib
 all: popt.lib
 
 popt.lib: popt.obj poptconfig.obj popthelp.obj poptint.obj poptparse.obj
-	$(LIB) /o:$@ $**
+	$(LIB) /o$@ $**
 
 .c.obj:
 	$(CC) $(CFLAGS) /DHAVE_CONFIG_H=1 /c $<
